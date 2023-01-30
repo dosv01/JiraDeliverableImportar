@@ -1,5 +1,5 @@
-const csv = require('csv-parser');
-const fs = require('fs');
+import csv from 'csv-parser';
+import { createReadStream, writeFile } from 'fs';
 const lstImport = [];
 
 const sprints = {
@@ -45,7 +45,7 @@ readCsv();
 
 function readCsv() {
 
-    fs.createReadStream('./file/import2.csv')
+    createReadStream('./file/import2.csv')
         .pipe(csv(
             {
                 separator: ";"
@@ -104,49 +104,36 @@ function transformData(lstImport) {
             objImportDeliverable.Parent_Id = issue.Key + ""
             //Especificação Técnica API - Back-End
             prepareModelETAPI(objImportDeliverable);
-            // Faltam as Datas
-            objImportDeliverable.Baseline_Start = '01/01/2023',
-                objImportDeliverable.Baseline_Draft_Completion = '01/01/2023',
-                objImportDeliverable.Baseline_Review_Completion = '01/01/2023',
-                objImportDeliverable.Baseline_Closure = '01/01/2023',
-                objImportDeliverable.Forecast_Start_Date = '01/01/2023',
-                objImportDeliverable.Forecast_Target_Draft_Completion = '01/01/2023',
-                objImportDeliverable.Baseline_Start = '01/01/2023',
-                objImportDeliverable.Forecast_Target_Review_Completion = '01/01/2023',
-                objImportDeliverable.Forecast_Target_Date = '01/01/2023',
-                objImportDeliverable.Actual_Start = '01/01/2023',
-                objImportDeliverable.Actual_Draft_Completion = '01/01/2023',
-                objImportDeliverable.Actual_Review_Completion = '01/01/2023',
-                objImportDeliverable.Actual_Closure = '01/01/2023',
-                data.push(getCsv(objImportDeliverable));
+            validateSprintDates(objImportDeliverable);
+            data.push(getCsv(objImportDeliverable));
 
             // //Configuração API Gateway - Back-End
-            // prepareModelConfigAPIGateway(objImportDeliverable);
-            // // Faltam as Datas
-            // data.push(objImportDeliverable);
+            prepareModelConfigAPIGateway(objImportDeliverable);
+            validateSprintDates(objImportDeliverable);
+            data.push(objImportDeliverable);
 
             // //Dev - Codificar Lambda
-            // prepareModelDevCodLambda(objImportDeliverable);
-            // // Faltam as Datas
-            // data.push(objImportDeliverable);
+            prepareModelDevCodLambda(objImportDeliverable);
+            validateSprintDates(objImportDeliverable);
+            data.push(objImportDeliverable);
 
             // //Teste Local
-            // prepareModelTesteLocal(objImportDeliverable);
-            // // Faltam as Datas
-            // data.push(objImportDeliverable);
+            prepareModelTesteLocal(objImportDeliverable);
+            validateSprintDates(objImportDeliverable);
+            data.push(objImportDeliverable);
 
             // //Deploy + Teste Ambiente QA
-            // prepareModelDeployQA(objImportDeliverable);
-            // // Faltam as Datas
-            // data.push(objImportDeliverable);
+            prepareModelDeployQA(objImportDeliverable);
+            validateSprintDates(objImportDeliverable);
+            data.push(objImportDeliverable);
 
             // //Code Review
-            // prepareModelCodeReview(objImportDeliverable);
-            // // Faltam as Datas
-            // data.push(objImportDeliverable);
+            prepareModelCodeReview(objImportDeliverable);
+            validateSprintDates(objImportDeliverable);
+            data.push(objImportDeliverable);
         });
 
-    fs.writeFile("./file/data.csv", data.join("\r\n"), "ascii", (err) => {
+    writeFile("./file/data.csv", data.join("\r\n"), "ascii", (err) => {
         if (err) console.log(err);
         else console.log("Data saved");
     });
@@ -224,4 +211,20 @@ function prepareModelCodeReview(objImportDeliverable) {
 function getCsv(objImportDeliverable) {
     return Object.values(objImportDeliverable).map(x => x).join(";");
 
+}
+
+function validateSprintDates(objImportDeliverable) {
+    objImportDeliverable.Baseline_Start = '01/01/2023',
+        objImportDeliverable.Baseline_Draft_Completion = '01/01/2023',
+        objImportDeliverable.Baseline_Review_Completion = '01/01/2023',
+        objImportDeliverable.Baseline_Closure = '01/01/2023',
+        objImportDeliverable.Forecast_Start_Date = '01/01/2023',
+        objImportDeliverable.Forecast_Target_Draft_Completion = '01/01/2023',
+        objImportDeliverable.Baseline_Start = '01/01/2023',
+        objImportDeliverable.Forecast_Target_Review_Completion = '01/01/2023',
+        objImportDeliverable.Forecast_Target_Date = '01/01/2023',
+        objImportDeliverable.Actual_Start = '01/01/2023',
+        objImportDeliverable.Actual_Draft_Completion = '01/01/2023',
+        objImportDeliverable.Actual_Review_Completion = '01/01/2023',
+        objImportDeliverable.Actual_Closure = '01/01/2023'
 }
