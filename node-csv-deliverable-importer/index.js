@@ -1,6 +1,34 @@
-import csv from 'csv-parser';
-import { createReadStream, writeFile } from 'fs';
+const csv = require('csv-parser')
+const fs = require('fs')
+
 const lstImport = [];
+
+const objImportDeliverable = {
+    Summary: String,
+    Description: String,
+    Component: String,
+    Contractual: String,
+    Organização: String,
+    DeliverableId: String,
+    Assignee: String,
+    Deliverable_Type: String,
+    Baseline_Start: String,
+    Baseline_Draft_Completion: String,
+    Baseline_Review_Completion: String,
+    Baseline_Closure: String,
+    Forecast_Start_Date: String,
+    Forecast_Target_Draft_Completion: String,
+    Baseline_Start: String,
+    Forecast_Target_Review_Completion: String,
+    Forecast_Target_Date: String,
+    Actual_Start: String,
+    Actual_Draft_Completion: String,
+    Actual_Review_Completion: String,
+    Actual_Closure: String,
+    IssueType: String,
+    Parent_Id: String,
+    Issue_Id: String,
+}
 
 const sprints = {
     Sprint2: {
@@ -45,7 +73,7 @@ readCsv();
 
 function readCsv() {
 
-    createReadStream('./file/import2.csv')
+    fs.createReadStream('./file/import2.csv')
         .pipe(csv(
             {
                 separator: ";"
@@ -62,34 +90,7 @@ function readCsv() {
 function transformData(lstImport) {
 
     const data = [];
-    createHeader(data);
-
-    const objImportDeliverable = {
-        Summary: String,
-        Description: String,
-        Component: String,
-        Contractual: String,
-        Organização: String,
-        DeliverableId: String,
-        Assignee: String,
-        Deliverable_Type: String,
-        Baseline_Start: String,
-        Baseline_Draft_Completion: String,
-        Baseline_Review_Completion: String,
-        Baseline_Closure: String,
-        Forecast_Start_Date: String,
-        Forecast_Target_Draft_Completion: String,
-        Baseline_Start: String,
-        Forecast_Target_Review_Completion: String,
-        Forecast_Target_Date: String,
-        Actual_Start: String,
-        Actual_Draft_Completion: String,
-        Actual_Review_Completion: String,
-        Actual_Closure: String,
-        IssueType: String,
-        Parent_Id: String,
-        Issue_Id: String,
-    }
+    data.push(createHeader());
 
     objImportDeliverable.Component = "1FPay - Back-End \ Time 4",
         objImportDeliverable.Contractual = "No",
@@ -102,44 +103,40 @@ function transformData(lstImport) {
 
             objImportDeliverable.Assignee = issue.Assignee + ""
             objImportDeliverable.Parent_Id = issue.Key + ""
+            validateSprintDates(issue.Sprint); //TODO: validar data do Deliverable pelo Sprint
+
             //Especificação Técnica API - Back-End
-            prepareModelETAPI(objImportDeliverable);
-            validateSprintDates(objImportDeliverable);
-            data.push(getCsv(objImportDeliverable));
+            prepareModelETAPI();
+            data.push(getCsv());
 
             // //Configuração API Gateway - Back-End
-            prepareModelConfigAPIGateway(objImportDeliverable);
-            validateSprintDates(objImportDeliverable);
-            data.push(objImportDeliverable);
+            prepareModelConfigAPIGateway();
+            data.push(getCsv());
 
             // //Dev - Codificar Lambda
-            prepareModelDevCodLambda(objImportDeliverable);
-            validateSprintDates(objImportDeliverable);
-            data.push(objImportDeliverable);
+            prepareModelDevCodLambda();
+            data.push(getCsv());
 
             // //Teste Local
-            prepareModelTesteLocal(objImportDeliverable);
-            validateSprintDates(objImportDeliverable);
-            data.push(objImportDeliverable);
+            prepareModelTesteLocal();
+            data.push(getCsv());
 
             // //Deploy + Teste Ambiente QA
-            prepareModelDeployQA(objImportDeliverable);
-            validateSprintDates(objImportDeliverable);
-            data.push(objImportDeliverable);
+            prepareModelDeployQA();
+            data.push(getCsv());
 
             // //Code Review
-            prepareModelCodeReview(objImportDeliverable);
-            validateSprintDates(objImportDeliverable);
-            data.push(objImportDeliverable);
+            prepareModelCodeReview();
+            data.push(getCsv());
         });
 
-    writeFile("./file/data.csv", data.join("\r\n"), "ascii", (err) => {
+    fs.writeFile("./file/data.csv", data.join("\r\n"), "ascii", (err) => {
         if (err) console.log(err);
         else console.log("Data saved");
     });
 }
 
-function createHeader(data) {
+function createHeader() {
 
     const header = "Summary (Resumo);" +
         "Description (repetir o resumo);" +
@@ -165,55 +162,55 @@ function createHeader(data) {
         "Parent Id (Id Principal);" +
         "Issue Id (ID da Item);"
 
-    data.push(header);
+    return header;
 }
 
 function getBaselineDates(issue) {
 
 }
 
-function prepareModelETAPI(objImportDeliverable) {
+function prepareModelETAPI() {
     objImportDeliverable.Summary = "Especificação Técnica API - Back-End"
     objImportDeliverable.Description = "Especificação Técnica API - Back-End"
     objImportDeliverable.Deliverable_Type = "Especificação Técnica API - Back-End"
 }
 
-function prepareModelConfigAPIGateway(objImportDeliverable) {
+function prepareModelConfigAPIGateway() {
     objImportDeliverable.Summary = "Configuração API Gateway - Back-End"
     objImportDeliverable.Description = "Configuração API Gateway - Back-End"
     objImportDeliverable.Deliverable_Type = "Configuração API Gateway - Back-End"
 }
 
-function prepareModelDevCodLambda(objImportDeliverable) {
+function prepareModelDevCodLambda() {
     objImportDeliverable.Summary = "Dev - Codificar Lambda"
     objImportDeliverable.Description = "Dev - Codificar Lambda"
     objImportDeliverable.Deliverable_Type = "Codificar Lambda Baseado na Especificação Funcional e Especificação Técnica (Código + Teste Unitário + Arquitetura)  - Back-End"
 }
 
-function prepareModelTesteLocal(objImportDeliverable) {
+function prepareModelTesteLocal() {
     objImportDeliverable.Summary = "Teste Local"
     objImportDeliverable.Description = "Teste Local"
     objImportDeliverable.Deliverable_Type = "Executar Teste Integrado em Ambiente Local - Back-End"
 }
 
-function prepareModelDeployQA(objImportDeliverable) {
+function prepareModelDeployQA() {
     objImportDeliverable.Summary = "Deploy + Teste Ambiente QA"
     objImportDeliverable.Description = "Deploy + Teste Ambiente QA"
     objImportDeliverable.Deliverable_Type = "Deploy + Teste Integrado + AWS Dev - Back-End"
 }
 
-function prepareModelCodeReview(objImportDeliverable) {
+function prepareModelCodeReview() {
     objImportDeliverable.Summary = "Code Review"
     objImportDeliverable.Description = "Code Review"
     objImportDeliverable.Deliverable_Type = "Codificar Lambda Baseado na Especificação Funcional e Especificação Técnica (Código + Teste Unitário + Arquitetura)  - Back-End"
 }
 
-function getCsv(objImportDeliverable) {
+function getCsv() {
     return Object.values(objImportDeliverable).map(x => x).join(";");
 
 }
 
-function validateSprintDates(objImportDeliverable) {
+function validateSprintDates() {
     objImportDeliverable.Baseline_Start = '01/01/2023',
         objImportDeliverable.Baseline_Draft_Completion = '01/01/2023',
         objImportDeliverable.Baseline_Review_Completion = '01/01/2023',
