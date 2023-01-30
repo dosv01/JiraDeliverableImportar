@@ -1,0 +1,4 @@
+﻿ID;Key;Summary;Status;Components;Sprint;Assignee;
+1;PEFA-9869;Funcional - 19.1.1 Faturamento e Extrato – Faturamento e Emissão de Extrato de Fatura;Done;Funcional;PEFA Faturamento Sprint 2;UsuarioTeste1;
+13;PEFA-13088;{1FPAY} GET /accounts/{accountId}/address;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 3;UsuarioTeste1;
+21;PEFA-13100;{1FPAY} GET /statements/files/bank-slip-register/download;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 4;UsuarioTeste2;

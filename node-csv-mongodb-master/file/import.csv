@@ -1,0 +1,97 @@
+﻿Chave;Summary;Status;Components;Sprint
+PEFA-9869;Funcional - 19.1.1 Faturamento e Extrato – Faturamento e Emissão de Extrato de Fatura;Done;Funcional;PEFA Faturamento Sprint 2
+PEFA-9868;Funcional - 19.1.2 Faturamento e Extrato – Download de arquivos de registro de boleto e retorno Pagamentos;Done;Funcional;PEFA Faturamento Sprint 2
+PEFA-9867;Funcional - 19.1.3 Faturamento e Extrato – Upload de arquivo de retorno de registro de boleto e Pagamentos;Done;Funcional;PEFA Faturamento Sprint 2
+PEFA-9866;Funcional - 19.5 Faturamento e Extrato – Tratamento de Inconsistências de Faturamento;Done;Funcional;PEFA Faturamento Sprint 2
+PEFA-9865;Funcional - 19.1.4 Faturamento e Extrato – Download do Arquivo de Fatura;Done;Funcional;PEFA Faturamento Sprint 2
+PEFA-9864;Funcional - 19.2.1 Faturamento e Extrato – Consulta de Fatura;Active;Funcional;PEFA Faturamento Sprint 2;PEFA Monetary Sprint 4
+PEFA-9863;Funcional - 19.2.2 Faturamento e Extrato – Solicitação de Segunda Via de Fatura;Active;Funcional;PEFA Faturamento Sprint 2;PEFA Monetary Sprint 4
+PEFA-9862;Funcional - 20.1.1 Pagamento de fatura - Postagem de pagamento de fatura, amortização de pagamentos e hierarquia de transações;Active;Funcional;PEFA Faturamento Sprint 2;PEFA Monetary Sprint 4
+PEFA-5457;Funcional -20.2 Pagamento de fatura - Estorno de postagem de pagamento de fatura>R1;Active;Funcional;PEFA Faturamento Sprint 2;PEFA Monetary Sprint 4
+PEFA-5420;Funcional -19.3 Faturamento e Extrato – Consulta para Melhor dia de Compras>R0;Active;Funcional;PEFA Faturamento Sprint 2;PEFA Monetary Sprint 4
+PEFA-5418;Funcional -19.4 Faturamento e Extrato – Cash in Conta Digital Por Boleto - Geração e Pagamento>R0;Active;Funcional;PEFA Faturamento Sprint 2;PEFA Monetary Sprint 4
+PEFA-13557;Preenchimento dos parâmetros de Programas ;New;Funcional;PEFA Monetary Sprint 3
+PEFA-13088;{1FPAY} GET /accounts/{accountId}/address;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 3
+PEFA-12634;{1FPAY} GET: {1FPAY} statements/{accountId}/dates;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 3
+PEFA-12295;{1FPAY} Lambda para consumo de eventos e orquestração;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 3
+PEFA-9861;Funcional - 20.1.2 Pagamento de fatura - Geração de arquivo de postagem de pagamento de fatura;Active;Funcional;PEFA Monetary Sprint 3
+PEFA-5464;Funcional -21.1 Parcelamento de Fatura - Oferta de Parcelamento de Fatura no Extrato de Fatura>R0;Active;Funcional;PEFA Monetary Sprint 3
+PEFA-5460;Funcional -21.3 Parcelamento de Fatura -  Ativação de Parcelamento de Fatura Facultativo>R0;Active;Funcional;PEFA Monetary Sprint 3
+PEFA-5456;Funcional -20.4 Pagamento de fatura - Consulta de transações amortizadas pelo pagamento da fatura>R1;Active;Funcional;PEFA Monetary Sprint 3
+PEFA-5455;Funcional -20.3 Pagamento de fatura - Consulta de pagamentos de fatura realizados>R1;Active;Funcional;PEFA Monetary Sprint 3
+PEFA-13100;{1FPAY} GET /statements/files/bank-slip-register/download;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 4
+PEFA-13095;{1FPAY} PATCH /accounts/{accountId};New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 4
+PEFA-13092;{1FPAY} GET /accounts/{accountId}/limits;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 4
+PEFA-13091;{1FPAY} POST /transactions/adjustments/accounts/{accountId};New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 4
+PEFA-12142;{1FPAY} API DO PROGRAMA A SER DESENVOLVIDA (Entidade Statement Customer Service Information);New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 4
+PEFA-12138;{1FPAY} GET /accounts/{accountId}/cards/{partyRoleId} ;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 4
+PEFA-12137;{1FPAY} GET/v1/party/{partyId} ;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 4
+PEFA-12136;{1FPAY} GET /accounts/{accountId}/parties;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 4
+PEFA-5465;Funcional -21.2 Parcelamento de Fatura - Oferta de Parcelamento de Fatura nos Canais de Atendimento>R0;Active;Funcional;PEFA Monetary Sprint 4
+PEFA-5463;Funcional -21.4 Parcelamento de Fatura - Consulta de Parcelamentos de Faturas Ativos e em Andamento>R0;Active;Funcional;PEFA Monetary Sprint 4
+PEFA-5462;Funcional -21.6 Parcelamento de Fatura - Ativação de Parcelamento de Fatura Compulsório>R0;Active;Funcional;PEFA Monetary Sprint 4
+PEFA-5454;Funcional -20.5 Pagamento de fatura -  Adesão e concessão do benefício dias de graça>R1;Active;Funcional;PEFA Monetary Sprint 4
+PEFA-13101;{1FPAY} GET /statements/files/payments/result/download;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 5
+PEFA-12144;{1FPAY} Lambda para consumo de eventos e orquestração;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 5
+PEFA-12143;{1FPAY} GET  /accounts/{accountId};New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 5
+PEFA-12141;{1FPAY} GET /party/{partyId}/emails ;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 5
+PEFA-12140;{1FPAY} GET transactions/accounts/{accountId} ;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 5
+PEFA-12139;{1FPAY} GET /cards/{cardId} ;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 5
+PEFA-10811;{1FPAY} GET/statements/files/payments/upload;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 5
+PEFA-13444;{1FPAY} (GET) API A SER DESENVOVIDA 1FPAY PROGRAM -Consultar cotação do dólar;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 6
+PEFA-13443;{1FPAY} (GET) API A SER DESENVOVIDA 1FPAY PROGRAM -Consultar tipos de transações do programa;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 6
+PEFA-13442;{1FPAY} GET /statements/{statementId}/bank-slip;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 6
+PEFA-13441;{1FPAY} GET /transactions/accounts/{accountId};New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 6
+PEFA-13398;{1FPAY} PATCH /accounts/{accountId};New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 6
+PEFA-13103;{1FPAY} GET /statements/{statementId}/printed-statement;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 6
+PEFA-13102;{1FPAY} GET /statements/accounts/{accountId};New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 6
+PEFA-12293;{1FPAY} Lambda para consumo de eventos e orquestração;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 6
+PEFA-10812;{1FPAY} GET /statements/files/statement/download - Gerar evento com informações para gerar arquivo de fatura;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 6
+PEFA-13446;{1FPAY} GET /statements/{statementId}/bank-slip;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 7
+PEFA-13445;{1FPAY} (GET) API A SER DESENVOVIDA 1FPAY PROGRAM -Consultar contestações;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 7
+PEFA-13394;{1FPAY} GET v1/transactions/authorizations/accounts/{accountId};New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 7
+PEFA-13392;{1FPAY} GET /statements/{statementId}/cards;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 7
+PEFA-13373;{1FPAY} GET /statements/{statementId};New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 7
+PEFA-13345;{1FPAY} GET /accounts/{accountId};New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 7
+PEFA-12294;{1FPAY} Lambda para consumo de eventos e orquestração;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 7
+PEFA-10820;{1FPAY} GET /monetary/files/payments/upload;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 7
+PEFA-10816;{1FPAY} POST /statements/new-release-email;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 7
+PEFA-13222;{1FPAY} GET /statements/{statementId}/statement-fees;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 8
+PEFA-12174;{1FPAY} GET /statements/{transactionId}/payment-amortization-details;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 8
+PEFA-10826;{1FPAY} PATCH /statements/{accountId}/statement-financing-offers/simulate/{statementFinancingOfferId} - Registrar as ofertas geradas como oficiais;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 8
+PEFA-10825;{1FPAY} POST /statements/{accountId}/statement-financing-offers/simulate - Criar ofertas de parcelamento;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 8
+PEFA-10823;{1FPAY} GET /statements/payments/{accountId} *API a ser criada - Recepção de microsserviço de consulta de pagamentos realizados;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 8
+PEFA-10817;{1FPAY} PATCH /statements/{bankSlipNumber};New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 8
+PEFA-10813;{1FPAY} POST /statements/{statementId}/new-release;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 8
+PEFA-13456;{1FPAY} POST /statements/{accountId}/statement-financing-offers/simulate;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 9
+PEFA-12299;{1FPAY} Lambda para consumo de eventos e orquestração;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 9
+PEFA-12297;{1FPAY} Lambda para consumo de eventos e orquestração;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 9
+PEFA-12170;{1FPAY} GET /accounts/{accountId} - Microsserviço de consulta de status de cobrança da conta 1FPAY;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 9
+PEFA-10833;{1FPAY} POST /statements/payment - Ativar parcelamento compulsório;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 9
+PEFA-10818;{1FPAY} POST /statements/payment *API será publicada na V1 - Microsserviço de postagem de pagamento;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 9
+PEFA-13449;{1FPAY} POST /v1/transactions/accounts/{accountId}/;New;Pismo;PEFA Monetary Sprint 10
+PEFA-13448;{1FPAY} GET /programs/transaction-fee/{modelId};New;Pismo;PEFA Monetary Sprint 10
+PEFA-13438;{1FPAY} API a ser desenvolvida 1FPAY (planilha para requerer processing code);New;Pismo;PEFA Monetary Sprint 10
+PEFA-13437;{1FPAY} API a ser desenvolvida 1FPAY (consumir contador de boleto);New;Pismo;PEFA Monetary Sprint 10
+PEFA-13407;{1FPAY} GET /accounts/{accountId}/transaction-fee/API A SER CRIADA PELA 1FPAY;New;Pismo;PEFA Monetary Sprint 10
+PEFA-13404;{1FPAY} POST /statements/account/{accountId}/bank-slip;New;Pismo;PEFA Monetary Sprint 10
+PEFA-12296;{1FPAY} Lambda para consumo de eventos e orquestração;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 10
+PEFA-13455;{1FPAY} PATCH /statements/{accountId}/statement-financing-offers/simulate/{statementFinancingOfferId};New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 11
+PEFA-13439;{1FPAY} GET /v1/party/{partyId};New;Pismo;PEFA Monetary Sprint 11
+PEFA-13355;{1FPAY} GET /accounts/{accountId}/benefits;New;Integração;PEFA Monetary Sprint 11
+PEFA-13353;{1FPAY} (GET) API A SER DESENVOVIDA 1FPAY PROGRAM -Consultar benefício 'dias de graça';New;Integração;PEFA Monetary Sprint 11
+PEFA-13350;{1FPAY} GET /accounts/{accountId}/address/{adressId};New;Pismo;PEFA Monetary Sprint 11
+PEFA-13349;{1FPAY} GET /statements/account/{accountId};New;Pismo;PEFA Monetary Sprint 11
+PEFA-10827;{1FPAY} GET /statements/{statementId}/statement-financing-offers - Recepção de microsserviço 1FPAY;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 11
+PEFA-10824;{1FPAY} GET /statements/{transactionId}/payment-amortization-details;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 11
+PEFA-10822;{1FPAY} PATCH /statements/payments/{paymentId}/reversal *API a ser publicada na V1 - Requisição de microsserviço 1FPAY de estorno de pagamento de fatura;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 11
+PEFA-10821;{1FPAY} GET /statements/payments/{accountId}/ *API a ser publicada na V1 - Atendente Frontend identifica o pagamento de fatura realizado;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 11
+PEFA-13440;{1FPAY} GET /statements/{statementId}/financing-contracts/{statementFinancingContractId};New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 12
+PEFA-13359;{1FPAY} GET /statements/{accountId}/statement-financing-contracts;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 12
+PEFA-13358;{1FPAY} GET /statements/{statementId}/statement-financing-offers;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 12
+PEFA-13357;{1FPAY} GET /statements/account/{accountId};New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 12
+PEFA-12192;API a ser desenvolvida no domínio de Programas;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 12
+PEFA-10832;{1FPAY} GET /statements/{accountId}/statement-financing-contracts/{statementFinancingContractId} - Consultar detalhes do contrato de financiamento desejado;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 12
+PEFA-10831;{1FPAY} GET /statements/{accountId}/statement-financing-contracts - Consultar os contratos de parcelamento vinculados à conta;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 12
+PEFA-10830;{1FPAY} GET /statements/{statementId}/financing-offers/{statementFinancingOfferId} - Consultar detalhes das ofertas disponíveis para a fatura;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 12
+PEFA-10828;{1FPAY} POST /statements/{accountId}/statement-financing-offers/simulate - Recepção de microsserviço 1FPAY;New;1FPay - Back-End \ Time 4;PEFA Monetary Sprint 12
